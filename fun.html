@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="authors" content="Claude, Jordi, Oksana">
     <meta name="Description" content="Group Project including Games, RSS/API Integrated Crypto Based News feed and Jokes">
- <!--bootstrap-->   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--bootstrap-->   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!--Main Styles-->    <link rel="stylesheet" href="MainStyles.css">
     <!--Main Script-->     <script src="MainScript.js" defer></script>
     <title>End With A Bang</title>
@@ -20,7 +20,20 @@
 
 </div>
 <div class="container">
-    Home page text and logo
+   <div id="fun-container">
+       <din class="left-menu">
+           <button id="cat-facts">Cat Facts</button>
+       </din>
+       <div id="fun-content">
+           Fun content
+       </div>
+
+   </div>
 </div>
+<script src="scripts/modules/getCatFacts.js"></script>
+
+<script src="scripts/funMain.js"></script>
+<script src="scripts/axios.min.js"></script>
+
 </body>
 </html>
