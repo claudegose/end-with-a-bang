@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="authors" content="Claude, Jordi, Oksana">
     <meta name="Description" content="Group Project including Games, RSS/API Integrated Crypto Based News feed and Jokes">
-    <!--bootstrap-->   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!--Main Styles-->    <link rel="stylesheet" href="../MainStyles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../MainStyles.css">
     <link rel="stylesheet" href = '../styles/styles.css'>
-    <!--Main Script-->     <script src="../MainScript.js" defer></script>
+    <script src="../MainScript.js" defer></script>
     <title>End With A Bang</title>
 </head>
 <body>
@@ -23,8 +23,10 @@
 <div class="container">
    <div id="fun-container">
        <din class="left-menu">
-           <button class="menu-button active" id="catFacts">Cat Facts</button>
-           <button class="menu-button" id="activity">Activity suggestion</button>
+           <button class="left-menu-button active" id="catFacts">Cat Facts</button>
+           <button class="left-menu-button" id="activity">Activity suggestion</button>
+           <button class="left-menu-button" id="memes">Some memes</button>
+
        </din>
        <div class="fun-content-outer">
            <div id="fun-content">
@@ -33,6 +35,7 @@
            </div>
            <button class='show-button' id="catFactsMore">More Cats</button>
            <button class='show-button display-none' id="activityMore">More Activities</button>
+           <button class='show-button display-none' id="memesMore">More</button>
        </div>
 
 
@@ -40,7 +43,7 @@
 </div>
 
 <script src="../scripts/modules/axios.min.js"></script>
-<script  type="module" src="../scripts/funMain.js"></script>
+<script  type="module" src="../scripts/fun.js"></script>
 
 
 

@@ -33,8 +33,8 @@
         element.setAttribute(attribute, value);
     }
 
-    const toggleActiveMenuButton = () => {
-        const menuButtons = document.getElementsByClassName('menu-button');
+    const toggleActiveSideMenuButton = () => {
+        const menuButtons = document.getElementsByClassName('left-menu-button');
         const showButtons = document.getElementsByClassName('show-button');
 
 
@@ -61,7 +61,7 @@
 
         }
     }
-    toggleActiveMenuButton();
+
 
     async function getCatFact() {
         try {
@@ -83,7 +83,6 @@
 
     async function getActivityList () {
         try{
-            setInnerHTML('fun-content', '');
             const activityResponse = await axios.get(`https://www.boredapi.com/api/activity`);
 
             const activityData = activityResponse.data;
@@ -96,6 +95,36 @@
             setInnerHTML('fun-content', 'Sorry, something went wrong.... Try again later');
         }
     }
+    let memesArray = [];
+
+    async function getMemesList() {
+        try{
+            const memesResponse = await axios.get(`https://api.imgflip.com/get_memes`);
+            const memesData = memesResponse.data.data.memes;
+            console.log(memesData);
+            createAndAppendElement('h2', `Play a little. Give a new funny title to well-know memes`, funContent);
+            createAndAppendImage(memesData[6].url, funContent);
+
+
+            let counter=0;
+
+            document.getElementById('memesMore').addEventListener('click', () => {
+                setInnerHTML('fun-content', '');
+                let memesIndex = counter%memesData.length;
+                createAndAppendElement('h2', `Play a little. Give a new funny title to well-know memes`, funContent);
+                createAndAppendImage(memesData[memesIndex].url, funContent);
+
+                counter ++;
+
+
+
+            })
+        } catch {
+            setInnerHTML('fun-content', 'Sorry, something went wrong.... Try again later');
+        }
+    }
+
+
 
     document.getElementById('catFacts').addEventListener('click', () => {
         setInnerHTML('fun-content', '');
@@ -116,7 +145,16 @@
         getActivityList();
     });
 
-        getCatFact();
+    document.getElementById('memes').addEventListener('click', () => {
+        setInnerHTML('fun-content', '');
+        getMemesList();
+
+    })
+
+
+
+    toggleActiveSideMenuButton();
+    getCatFact();
 
 
 })()
