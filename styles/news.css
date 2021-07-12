@@ -1,5 +1,9 @@
 
-
+.wrapper div {
+    padding: 20px 15px;
+    border: 1px solid black;
+    text-align: center;
+}
 
 
 .wrapper {
