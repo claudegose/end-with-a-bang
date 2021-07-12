@@ -1,0 +1,13 @@
+.display-none {
+  display: none;
+}
+
+.active {
+  border: 2px solid red;
+}
+
+#fun-content img {
+  width: 200px;
+}
+
+/*# sourceMappingURL=styles.css.map */
