@@ -18,6 +18,8 @@
 }
 
 
+
+
 .header {
     display:grid;
     grid-area: header;
@@ -53,6 +55,46 @@
     background: grey;
 }
 
+
+
+
+
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 700px) {
+    .wrapper {
+        width: 100vw;
+        height: 100vh;
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 1fr 3fr 1fr 1fr;
+        grid-template-areas:    "header"
+                                "left"
+                                "main"
+                                "right"
+                                "footer";
+    }
+}
 
 
 
