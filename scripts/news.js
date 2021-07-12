@@ -65,6 +65,38 @@ fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey=250dec31253143d0a5
     img6.src = data.articles[5].urlToImage;
     document.getElementById("sixthImage").append(img6)
 
+    // Seventh Card
+    document.querySelector(".seventhTitle").innerHTML = data.articles[6].title;
+    document.querySelector(".seventhParagraph").innerHTML = data.articles[6].content
+    // Image Element Create Dynamically
+
+    var img7 = document.createElement("img")
+    img7.src = data.articles[6].urlToImage;
+    document.getElementById("seventhImage").append(img7)
+
+    // Eighth Card
+    document.querySelector(".eighthTitle").innerHTML = data.articles[7].title;
+    document.querySelector(".eighthParagraph").innerHTML = data.articles[7].content
+    // Image Element Create Dynamically
+
+    var img8 = document.createElement("img")
+    img8.src = data.articles[7].urlToImage;
+    document.getElementById("eighthImage").append(img8)
+
+    // Nineth Card
+    document.querySelector(".ninethTitle").innerHTML = data.articles[8].title;
+    document.querySelector(".ninethParagraph").innerHTML = data.articles[8].content
+    // Image Element Create Dynamically
+
+    var img9 = document.createElement("img")
+    img9.src = data.articles[8].urlToImage;
+    document.getElementById("ninethImage").append(img9)
+
+
+
+
+
+
 
 
 })
