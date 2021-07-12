@@ -1,0 +1,54 @@
+
+
+
+
+.wrapper {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-rows: 1fr 5fr 1fr;
+    grid-template-areas: "header header header"
+    "left main right"
+    "footer footer footer";
+
+}
+
+
+.header {
+    display:grid;
+    grid-area: header;
+    background: grey;
+}
+
+
+
+
+.left {
+    display: grid;
+    grid-area: left;
+    background: grey;
+}
+
+.main {
+    display: grid;
+    grid-area: main;
+    background: white;
+}
+
+
+.right {
+    display: grid;
+    grid-area: right;
+    background: grey;
+}
+
+
+.footer {
+    display: grid;
+    grid-area: footer;
+    background: grey;
+}
+
+
+
+
