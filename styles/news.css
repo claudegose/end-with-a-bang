@@ -1,64 +1,4 @@
 
-.wrapper div {
-    padding: 20px 15px;
-    border: 1px solid black;
-    text-align: center;
-}
-
-
-.wrapper {
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 6fr 1fr;
-    grid-template-rows: 1fr 5fr 1fr;
-    grid-template-areas: "header header header"
-    "left main right"
-    "footer footer footer";
-
-}
-
-
-
-
-.header {
-    display:grid;
-    grid-area: header;
-    background: grey;
-}
-
-
-
-
-.left {
-    display: grid;
-    grid-area: left;
-    background: grey;
-}
-
-.main {
-    display: grid;
-    grid-area: main;
-    background: white;
-}
-
-
-.right {
-    display: grid;
-    grid-area: right;
-    background: grey;
-}
-
-
-.footer {
-    display: grid;
-    grid-area: footer;
-    background: grey;
-}
-
-
-
-
-
 
 img {
     display: block;
@@ -69,11 +9,14 @@ img {
 
 }
 
-#buttons {
-    padding-bottom: 10px;
+.buttons {
+    padding-bottom: 15px;
 }
 
-
+.container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
 
 
 
