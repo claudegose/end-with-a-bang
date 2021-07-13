@@ -43,7 +43,7 @@
         for (let button of menuButtons){
             button.addEventListener('click', () =>{
                 for (let button of menuButtons){
-                    button.classList.remove('active');
+                    button.classList.remove('base-button-active');
 
                 };
                 let buttonId = button.getAttribute('id');
@@ -58,7 +58,7 @@
                 }
 
 
-                button.classList.add('active');
+                button.classList.add('base-button-active');
             })
 
         }
@@ -67,7 +67,7 @@
 
     async function getCatFact() {
         try {
-            setInnerHTML('fun-title', ``);
+            setInnerHTML('fun-title', `Love cats? Want know more about them? You are on right place`);
             const catFactResponse = await axios.get(`https://catfact.ninja/fact`);
 
             const catFact = catFactResponse.data.fact;
@@ -86,7 +86,7 @@
 
     async function getActivityList () {
         try{
-            setInnerHTML('fun-title', ``);
+            setInnerHTML('fun-title', `Get bored? Here is some suggestion to do.`);
             const activityResponse = await axios.get(`https://www.boredapi.com/api/activity`);
 
             const activityData = activityResponse.data;
@@ -127,7 +127,7 @@
 
     async function getJokeList(){
         try{
-            setInnerHTML('fun-title', ``);
+            setInnerHTML('fun-title', `Have some fun. Here is nice jokes all over the world`);
             const jokeResponse = await axios.get(`https://v2.jokeapi.dev/joke/Any`);
 
             let jokePart1 = jokeResponse.data.setup;
@@ -149,7 +149,7 @@
     }
     async function getDogsFotos(){
         try{
-            setInnerHTML('fun-title', ``);
+            setInnerHTML('fun-title', `Can't live without dogs? Here you can find the cutest dogs photos`);
             const dogFotosResponse = await axios.get(`https://random.dog/woof.json`);
             const dogFotoUrl = dogFotosResponse.data.url;
             createAndAppendImage(dogFotoUrl, funContent, 'dogImage');
@@ -161,7 +161,7 @@
 
     function getQuotesList(){
 
-            setInnerHTML('fun-title', `Get random quotes in various languages from best-rated quotes allover the world`);
+            setInnerHTML('fun-title', `Get random quotes from the famous people in the world`);
 
             let options = {
                 method: 'GET',
