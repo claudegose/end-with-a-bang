@@ -2,7 +2,7 @@ fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey=250dec31253143d0a5
 .then(res => res.json())
 .then(data => {
 
-    console.log(data)
+console.log(data)
 
 
 
@@ -13,7 +13,7 @@ fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey=250dec31253143d0a5
 
     var img1 = document.createElement("img")
     img1.src = data.articles[0].urlToImage;
-    document.getElementById("firstImage").append(img1)
+    document.getElementById("first").append(img1)
 
 
     // Second Card
@@ -74,6 +74,7 @@ fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey=250dec31253143d0a5
     img7.src = data.articles[6].urlToImage;
     document.getElementById("seventhImage").append(img7)
 
+
     // Eighth Card
     document.querySelector(".eighthTitle").innerHTML = data.articles[7].title;
     document.querySelector(".eighthParagraph").innerHTML = data.articles[7].content
@@ -91,6 +92,66 @@ fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey=250dec31253143d0a5
     var img9 = document.createElement("img")
     img9.src = data.articles[8].urlToImage;
     document.getElementById("ninethImage").append(img9)
+
+    // tenthth Card
+    document.querySelector(".tenthTitle").innerHTML = data.articles[9].title;
+    document.querySelector(".tenthParagraph").innerHTML = data.articles[9].content
+    // Image Element Create Dynamically
+
+    var img10 = document.createElement("img")
+    img10.src = data.articles[9].urlToImage;
+    document.getElementById("tenthImage").append(img10)
+
+    // eleventh Card
+    document.querySelector(".eleventhTitle").innerHTML = data.articles[10].title;
+    document.querySelector(".eleventhParagraph").innerHTML = data.articles[10].content
+    // Image Element Create Dynamically
+
+    var img11 = document.createElement("img")
+    img11.src = data.articles[10].urlToImage;
+    document.getElementById("eleventhImage").append(img1)
+
+    // twelfth Card
+    document.querySelector(".twelfthTitle").innerHTML = data.articles[11].title;
+    document.querySelector(".twelfthParagraph").innerHTML = data.articles[11].content
+    // Image Element Create Dynamically
+
+    var img12 = document.createElement("img")
+    img12.src = data.articles[11].urlToImage;
+    document.getElementById("twelfthImage").append(img12)
+
+
+    // thirteen Card
+    document.querySelector(".thirteenTitle").innerHTML = data.articles[12].title;
+    document.querySelector(".thirteenParagraph").innerHTML = data.articles[12].content
+    // Image Element Create Dynamically
+
+    var img13 = document.createElement("img")
+    img13.src = data.articles[12].urlToImage;
+    document.getElementById("thirteenImage").append(img13)
+
+
+
+    // fourteen Card
+    document.querySelector(".fourteenTitle").innerHTML = data.articles[13].title;
+    document.querySelector(".fourteenParagraph").innerHTML = data.articles[13].content
+    // Image Element Create Dynamically
+
+    var img14 = document.createElement("img")
+    img14.src = data.articles[13].urlToImage;
+    document.getElementById("fourteenImage").append(img14)
+
+
+
+    // fifteen Card
+    document.querySelector(".fifteenTitle").innerHTML = data.articles[14].title;
+    document.querySelector(".fifteenParagraph").innerHTML = data.articles[14].content
+    // Image Element Create Dynamically
+
+    var img15 = document.createElement("img")
+    img15.src = data.articles[14].urlToImage;
+    document.getElementById("fifteenImage").append(img15)
+
 
 
 
