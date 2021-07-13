@@ -67,7 +67,7 @@
 
     async function getCatFact() {
         try {
-            setInnerHTML('fun-title', `Love cats? Want know more about them? You are on right place`);
+            setInnerHTML('fun-title', `Love cats? Want to know more about them? You are on the right page`);
             const catFactResponse = await axios.get(`https://catfact.ninja/fact`);
 
             const catFact = catFactResponse.data.fact;
@@ -149,6 +149,7 @@
     }
     async function getDogsFotos(){
         try{
+            setInnerHTML('fun-content', '');
             setInnerHTML('fun-title', `Can't live without dogs? Here you can find the cutest dogs photos`);
             const dogFotosResponse = await axios.get(`https://random.dog/woof.json`);
             const dogFotoUrl = dogFotosResponse.data.url;
