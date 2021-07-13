@@ -1,7 +1,4 @@
-(()=>{
-    console.log("cat facts");
-
-
+const getCatFacts = () =>{
     async function getCatFact() {
         try {
             const response = await axios.get(`https://catfact.ninja/fact`);
@@ -14,9 +11,9 @@
 
         };
     };
+}
 
-    getCatFact();
 
-})()
+export {getCatFacts};
 
 

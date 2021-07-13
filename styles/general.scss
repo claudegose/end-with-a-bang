@@ -1,0 +1,17 @@
+body{
+ background-color: var(--backgroundColor);
+  display: grid;
+  justify-content: center;
+  align-items: stretch;
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
+
+.display-none{
+  display: none;
+}
+
+button{
+  border: none;
+}
+
