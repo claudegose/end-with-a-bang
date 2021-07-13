@@ -23,19 +23,34 @@
 <div class="container">
    <div id="fun-container">
        <din class="left-menu">
-           <button class="left-menu-button active" id="catFacts">Cat Facts</button>
-           <button class="left-menu-button" id="activity">Activity suggestion</button>
-           <button class="left-menu-button" id="memes">Some memes</button>
+           <button id="catFacts" class="left-menu-button active" >Cat Facts</button>
+           <button id="jokes" class="left-menu-button" >Jokes</button>
+           <button id="activity" class="left-menu-button" >Activity suggestion</button>
+           <button id="memes" class="left-menu-button" >Some memes</button>
+           <button id="dogFotos" class="left-menu-button" >Cute Dogs</button>
+           <button id="quotes" class="left-menu-button" >Nice quotes</button>
+
 
        </din>
+
+       <!-- id of left-menu-buttons XXX, then id of of fun-content-outer buttons XXXMore  -->
        <div class="fun-content-outer">
-           <div id="fun-content">
-               Fun content
+           <div id="fun-title">
 
            </div>
-           <button class='show-button' id="catFactsMore">More Cats</button>
-           <button class='show-button display-none' id="activityMore">More Activities</button>
-           <button class='show-button display-none' id="memesMore">More</button>
+
+           <div class="show-buttons">
+               <button id="catFactsMore" class='show-button'>More Cats</button>
+               <button id="activityMore" class='show-button display-none'>More Activities</button>
+               <button id="jokesMore" class='show-button display-none' >More</button>
+               <button id="memesMore" class='show-button display-none' >More</button>
+               <button id="dogFotosMore" class='show-button display-none'>More</button>
+               <button id="quotesMore" class='show-button display-none'>More</button>
+           </div>
+
+           <div id="fun-content">
+           </div>
+
        </div>
 
 
@@ -44,10 +59,6 @@
 
 <script src="../scripts/modules/axios.min.js"></script>
 <script  type="module" src="../scripts/fun.js"></script>
-
-
-
-
 
 
 </body>
