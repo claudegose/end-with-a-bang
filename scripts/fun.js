@@ -43,7 +43,7 @@
         for (let button of menuButtons){
             button.addEventListener('click', () =>{
                 for (let button of menuButtons){
-                    button.classList.remove('base-button-active');
+                    button.classList.remove('button-active');
 
                 };
                 let buttonId = button.getAttribute('id');
@@ -58,7 +58,7 @@
                 }
 
 
-                button.classList.add('base-button-active');
+                button.classList.add('button-active');
             })
 
         }
