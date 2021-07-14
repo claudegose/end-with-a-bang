@@ -38,13 +38,11 @@
         }
         setInnerHTML('museums-description', '');
 
-        console.log(museumSelect.value);
-
         for (let museum of museumList){
             if (museum.value == museumSelect.value){
                 setInnerHTML('museum-title', museum.title);
-                setInnerHTML('museum-city', museum.city);
-                setInnerHTML('museum-country', museum.country);
+                setInnerHTML('museum-city', `City: ${museum.city}`);
+                setInnerHTML('museum-country', `Country: ${museum.country}`);
                 setAttribute('museum-img', 'src', museum.img);
                 setAttribute('museum-url', 'href', museum.url);
                 setInnerHTML('museum-url', `Visit ${museum.title}`);
