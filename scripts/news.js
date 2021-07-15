@@ -11,9 +11,9 @@ console.log(data)
     document.querySelector(".firstParagraph").innerHTML = data.articles[0].content
    // Image Element Create Dynamically
 
-    var img1 = document.createElement("img")
-    img1.src = data.articles[0].urlToImage;
-    document.getElementById("first").append(img1)
+    var img = document.createElement("img")
+    img.src = data.articles[0].urlToImage
+    document.getElementById("firstImage").append(img)
 
 
     // Second Card
@@ -109,7 +109,7 @@ console.log(data)
 
     var img11 = document.createElement("img")
     img11.src = data.articles[10].urlToImage;
-    document.getElementById("eleventhImage").append(img1)
+    document.getElementById("eleventhImage").append(img11)
 
     // twelfth Card
     document.querySelector(".twelfthTitle").innerHTML = data.articles[11].title;
