@@ -63,6 +63,8 @@
                 filteredOptions.classList.add('display-none');
                 displayChosenMuseum(chosenMuseum);
                 museumInput.value = '';
+                setInnerHTML('museums-description', '');
+                document.getElementById('museum-url').classList.remove('display-none')
 
             })
 
@@ -72,6 +74,7 @@
     let filteredMuseums = museumList;
 
     museumInput.addEventListener('focus', () =>{
+        filteredMuseums = museumList;
         setInnerHTML('filteredOptions', '');
         filteredOptions.classList.remove('display-none');
         createFilteredMuseumList();
@@ -83,7 +86,7 @@
     museumInput.addEventListener('keyup', () =>{
 
         filteredMuseums = museumList.filter((museum) => {
-            return ((museum.country.toLowerCase()).includes(museumInput.value.toLowerCase()));
+            return ((museum.title.toLowerCase()).includes(museumInput.value.toLowerCase()) || (museum.country.toLowerCase()).includes(museumInput.value.toLowerCase()));
         });
 
 
@@ -92,7 +95,6 @@
         choseAndDisplayMuseum();
 
         if (filteredMuseums.length == 0){
-            console.log('empty')
             setInnerHTML('filteredOptions', 'No results found');
         }
     });
