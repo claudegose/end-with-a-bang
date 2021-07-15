@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="authors" content="Claude, Jordi, Oksana">
+    <meta name="Description" content="Group Project including Games, RSS/API Integrated Crypto Based News feed and Jokes">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../MainStyles.css">
+    <link rel="stylesheet" href = '../styles/styles.css'>
+    <link href="../LandingPage/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="shortcut icon" type="image/jpg" href="../images/favicon.ico"/>
+
+    <title>End With A Bang</title>
+</head>
+<body>
+
+    <div class="bgded" style="background-image:url('../images/anders-wideskott-_QnPkc4C6E4-unsplash.jpg');">
+
+        <div class="wrapper row1">
+            <header id="header" class="hoc clear">
+
+                <!-- Logo -->
+                <div id="logo" class="fl_left">
+
+                    <h1><a href="../index.html">Happy Days</a></h1>
+                </div>
+                <!-- End of Logo -->
+                <nav id="mainav" class="fl_right">
+
+                    <ul class="clear">
+                        <li><a href="../index.html">Home</a></li>
+
+                        <li><a href="news.html">Read</a></li>
+                        <li><a href="game.html">Play</a></li>
+                        <li><a href="fun.html">Laugh</a></li>
+                        <li><a href="museums.html">Museums</a></li>
+                    </ul>
+
+                </nav>
+            </header>
+        </div>
+    </div>
+    <div class="content">
+        <div class='content-inner' id="museums-container">
+              <div id="museumSelection">
+                <input id='museumInput' placeholder="Type country or museum...">
+                <div id="filteredOptions" class="display-none">
+
+                </div>
+            </div>
+            <div class="museums-content">
+                <div id="museums-description">
+                    While hope seems right around the corner, it seems like we’re still going to be staying indoors for the next few months. While we might occasionally be able to have a (socially distanced) outing, we’re continuing to mostly rely on grocery delivery and lots of pizza deliveries, and it’s safe to say we’re all a bit weary of seeing the four walls of our homes all the time. Thanks to these virtual tours, though, you won’t have to leave the comfort of your bed to visit the exhibition, enjoy the Louvre or experience the wonders of the galaxy at NASA firsthand.
+
+                    These are all the best virtual tours to take during your downtime. The only question is: Which one should we take first?
+                </div>
+
+                <div id="museum-title">
+                </div>
+                <div id="museum-city"></div>
+                <div id="museum-country"></div>
+                <img id="museum-img">
+                <div id="museum-description">
+                </div>
+                <a id='museum-url' target="_blank" href="#" class="customized-button display-none"> </a>
+            </div>
+
+
+        </div>
+
+    </div>
+    <div class="wrapper row5">
+        <div id="copyright" class="hoc clear">
+            <p align="center">Copyright 2021 - All Rights Reserved</p>
+        </div>
+    </div>
+
+
+
+
+<script src="../scripts/modules/axios.min.js"></script>
+<script  type="module" src="../scripts/museums.js"></script>
+
+
+</body>
+</html>
+
+
+</body>
+</html>

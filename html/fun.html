@@ -6,30 +6,52 @@
     <meta name="authors" content="Claude, Jordi, Oksana">
     <meta name="Description" content="Group Project including Games, RSS/API Integrated Crypto Based News feed and Jokes">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="../MainStyles.css">
+    <link href="../LandingPage/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+
     <link rel="stylesheet" href = '../styles/styles.css'>
+    <link rel="shortcut icon" type="image/jpg" href="../images/favicon.ico"/>
 
     <title>End With A Bang</title>
 </head>
 <body>
-<div class="main-container">
 
-    <div class="menu">
-        <a class='base-button' href="../index.html" id="home">Home</a>
-        <a class='base-button' href="news.html" id="news">News</a>
-        <a class='base-button' href="game.html" id="games">Games</a>
-        <a class='base-button base-button-active' href="fun.html" id="fun">Fun</a>
 
+    <div class="bgded" style="background-image:url('../images/anders-wideskott-_QnPkc4C6E4-unsplash.jpg');">
+
+    <div class="wrapper row1">
+        <header id="header" class="hoc clear">
+
+            <!-- Logo -->
+            <div id="logo" class="fl_left">
+
+                <h1><a href="../index.html">Happy Days</a></h1>
+            </div>
+            <!-- End of Logo -->
+            <nav id="mainav" class="fl_right">
+
+                <ul class="clear">
+                    <li><a href="../index.html">Home</a></li>
+
+                    <li><a href="news.html">Read</a></li>
+                    <li><a href="game.html">Play</a></li>
+                    <li><a href="fun.html">Laugh</a></li>
+                    <li><a href="museums.html">Museums</a></li>
+                </ul>
+
+            </nav>
+        </header>
     </div>
+</div>
+
     <div class="content">
-        <div id="fun-container">
+        <div class='content-inner' id="fun-container">
             <din class="left-menu">
-                <button id="catFacts" class="left-menu-button base-button base-button-active" >Cat Facts</button>
-                <button id="jokes" class="left-menu-button base-button" >Jokes</button>
-                <button id="activity" class="left-menu-button base-button" >Activity Suggestion</button>
-                <button id="memes" class="left-menu-button base-button" >Some Memes</button>
-                <button id="dogFotos" class="left-menu-button base-button" >Cute Dogs</button>
-                <button id="quotes" class="left-menu-button base-button" >Nice quotes</button>
+                <button id="catFacts" class="left-menu-button button-active  customized-button" >Cat Facts</button>
+                <button id="jokes" class="left-menu-button  customized-button" >Jokes</button>
+                <button id="activity" class="left-menu-button  customized-button" >Activity Suggestion</button>
+                <button id="memes" class="left-menu-button  customized-button" >Some Memes</button>
+                <button id="dogFotos" class="left-menu-button  customized-button" >Cute Dogs</button>
+                <button id="quotes" class="left-menu-button  customized-button" >Nice Quotes</button>
 
 
             </din>
@@ -39,29 +61,24 @@
                 <div id="fun-title">
 
                 </div>
-
-
-                <div id="fun-content">
+                <div id="fun-content" class="catFacts">
                 </div>
                 <div class="show-buttons">
-                    <button id="catFactsMore" class='show-button base-button'>More Cats</button>
-                    <button id="activityMore" class='show-button base-button display-none'>More Activities</button>
-                    <button id="jokesMore" class='show-button  base-button display-none' >More</button>
-                    <button id="memesMore" class='show-button base-button display-none' >More</button>
-                    <button id="dogFotosMore" class='show-button base-button display-none'>More</button>
-                    <button id="quotesMore" class='show-button base-button display-none'>More</button>
+                    <button id="catFactsMore" class='show-button customized-button'>More Cats</button>
+                    <button id="activityMore" class='show-button display-none customized-button'>More Activities</button>
+                    <button id="jokesMore" class='show-button  display-none customized-button' >More Jokes</button>
+                    <button id="memesMore" class='show-button display-none customized-button' >More Memes</button>
+                    <button id="dogFotosMore" class='show-button display-none customized-button'>More Dogs</button>
+                    <button id="quotesMore" class='show-button display-none customized-button'>More Quotes</button>
                 </div>
-
-
             </div>
-
-
+        </div>
+</div>
+    <div class="wrapper row5">
+        <div id="copyright" class="hoc clear">
+            <p align="center">Copyright 2021 - All Rights Reserved</p>
         </div>
     </div>
-</div>
-
-
-
 
 <script src="../scripts/modules/axios.min.js"></script>
 <script  type="module" src="../scripts/fun.js"></script>
