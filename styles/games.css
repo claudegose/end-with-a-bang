@@ -22,6 +22,7 @@
     margin-right: auto;
     display: flex;
     flex-wrap: wrap;
+    background-image: url(../images/background.jpg);
 }
 
 .grid div {
@@ -30,8 +31,8 @@
 }
 
 .shooter {
-    background-image: url(../images/blit.png);
-    background-size: contain;
+    background-image: url(../images/monkey.gif);
+    background-size: 43px;
 }
 
 .invader {
@@ -45,6 +46,6 @@
 }
 
 .laser {
-    background-image: url(../images/unnamed.png);
+    background-image: url(../images/banana.png);
     background-size: contain;
 }

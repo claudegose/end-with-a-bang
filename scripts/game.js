@@ -1,38 +1,38 @@
-const grid = document.querySelector('.grid')
+const spaceInvaders = () => {
 
-for (let i = 0; i < 225; i++) {
-    let square = document.createElement("div")
-    grid.appendChild(square)
-}
+    const grid = document.querySelector('.grid')
 
-let invaderID
-let result = 0
-let currentShooterIndex = 217
-let currentInvaderIndex = 0
-let deadInvaders = []
-let direction = 1
-let squares =  document.querySelectorAll('.grid div')
-let width = 15
+    for (let i = 0; i < 225; i++) {
+        let square = document.createElement("div")
+        grid.appendChild(square)
+    }
+
+    let invaderID
+    let result = 0
+    let currentShooterIndex = 217
+    let currentInvaderIndex = 0
+    let deadInvaders = []
+    let direction = 1
+    let squares =  document.querySelectorAll('.grid div')
+    let width = 15
 
 //define invaders
-const invaders = [
-    3, 4, 5, 6, 7, 8, 9, 10, 11,
-    18, 19, 20, 21, 22, 23, 24, 25, 26,
-    33, 34, 35, 36, 37, 38, 39, 40, 41
-]
+    const invaders = [
+        3, 4, 5, 6, 7, 8, 9, 10, 11,
+        18, 19, 20, 21, 22, 23, 24, 25, 26,
+        33, 34, 35, 36, 37, 38, 39, 40, 41
+    ]
 
 //draw invaders
-invaders.forEach( invader => squares[currentInvaderIndex + invader].classList.add('invader'))
+    invaders.forEach( invader => squares[currentInvaderIndex + invader].classList.add('invader'))
 
 //draw shooter
-squares[currentShooterIndex].classList.add('shooter')
-
-spaceInvaders = () => {
+    squares[currentShooterIndex].classList.add('shooter')
 
     const resultDisplay = document.getElementById('result')
 
     //moving character
-    moveShooter = (e) => {
+    const moveShooter = (e) => {
 
         squares[currentShooterIndex].classList.remove('shooter')
 
@@ -55,7 +55,7 @@ spaceInvaders = () => {
     document.addEventListener('keydown', moveShooter)
 
     //move aliens
-    moveInvaders = () => {
+    const moveInvaders = () => {
 
 
         const leftEdge = invaders[0] % width === 0
@@ -107,12 +107,12 @@ spaceInvaders = () => {
 
 
     //shooting
-    shoot = (e) => {
+    const shoot = (e) => {
         let laserId
         let currentLaserIndex = currentShooterIndex
 
         //moving laser up
-        moveLaser = () => {
+        const moveLaser = () => {
             squares[currentLaserIndex].classList.remove('laser')
             currentLaserIndex -= width
             squares[currentLaserIndex].classList.add('laser')
@@ -136,13 +136,13 @@ spaceInvaders = () => {
             }
         }
 
-        switch (e.keyCode) {
-            case 32:
+        switch (e.key) {
+            case 'ArrowUp':
                 laserId = setInterval(moveLaser, 100)
         }
     }
 
-    document.addEventListener('keyup', shoot)
+    document.addEventListener('keydown', shoot)
 }
 
 document.getElementById("run").addEventListener("click", spaceInvaders)
