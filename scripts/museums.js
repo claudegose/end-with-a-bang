@@ -13,7 +13,6 @@
 
     ];
 
-    const museumSelect = document.getElementById('selectMuseum');
 
     const setInnerHTML = (id, text) =>{
         document.getElementById(id).innerHTML = text;
@@ -23,39 +22,20 @@
         document.getElementById(id).setAttribute(attribute, value);
     }
 
-
-    for (let museum of museumList){
-        let optionElement = document.createElement('option');
-        optionElement.setAttribute('value', museum.value);
-        optionElement.innerHTML = `${museum.title} (${museum.city}, ${museum.country})`;
-        museumSelect.appendChild(optionElement);
-    };
-
-    museumSelect.addEventListener('click', ()=>{
-        document.getElementById('museumFirstOption').setAttribute('disabled', 'disabled');
-        if (museumSelect.value == 'null'){
-            return
-        }
-        setInnerHTML('museums-description', '');
-
-        for (let museum of museumList){
-            if (museum.value == museumSelect.value){
-                setInnerHTML('museum-title', museum.title);
-                setInnerHTML('museum-city', `City: ${museum.city}`);
-                setInnerHTML('museum-country', `Country: ${museum.country}`);
-                setAttribute('museum-img', 'src', museum.img);
-                setAttribute('museum-url', 'href', museum.url);
-                setInnerHTML('museum-url', `Visit ${museum.title}`);
-                setInnerHTML('museum-description', museum.description);
-
-            }
-
-        }
-    });
-
-
     const museumInput = document.getElementById('museumInput');
     const filteredOptions = document.getElementById('filteredOptions');
+    let chosenMuseum;
+
+    const displayChosenMuseum = (museum) =>{
+        setInnerHTML('museum-title', museum.title);
+        setInnerHTML('museum-city', `City: ${museum.city}`);
+        setInnerHTML('museum-country', `Country: ${museum.country}`);
+        setAttribute('museum-img', 'src', museum.img);
+        setAttribute('museum-url', 'href', museum.url);
+        setInnerHTML('museum-url', `Visit ${museum.title}`);
+        setInnerHTML('museum-description', museum.description);
+    }
+
     const createFilteredMuseumList = () =>{
         for (let museum of filteredMuseums){
             let optionElement = document.createElement('p');
@@ -67,29 +47,55 @@
         };
     }
 
+    const choseAndDisplayMuseum = () =>{
+        let museumItems = document.getElementsByClassName('museumItem');
 
+        for (let museum of museumItems){
+            museum.addEventListener('click', () =>{
+                let chosenMuseumValue = museum.getAttribute('data-value');
+
+
+                for (let item of filteredMuseums){
+                    if (item.value === chosenMuseumValue){
+                        chosenMuseum = item;
+                    }
+                }
+                filteredOptions.classList.add('display-none');
+                displayChosenMuseum(chosenMuseum);
+                museumInput.value = '';
+
+            })
+
+        }
+    };
+    museumInput.value = '';
     let filteredMuseums = museumList;
 
     museumInput.addEventListener('focus', () =>{
         setInnerHTML('filteredOptions', '');
         filteredOptions.classList.remove('display-none');
         createFilteredMuseumList();
-
-
-    });
-    museumInput.addEventListener('blur', () =>{
-       // filteredOptions.classList.add('display-none');
+        choseAndDisplayMuseum();
 
     });
+
 
     museumInput.addEventListener('keyup', () =>{
-        console.log(museumInput.value);
 
+        filteredMuseums = museumList.filter((museum) => {
+            return ((museum.country.toLowerCase()).includes(museumInput.value.toLowerCase()));
+        });
+
+
+        setInnerHTML('filteredOptions', '');
+        createFilteredMuseumList();
+        choseAndDisplayMuseum();
+
+        if (filteredMuseums.length == 0){
+            console.log('empty')
+            setInnerHTML('filteredOptions', 'No results found');
+        }
     });
-
-
-
-
 
 
 })();
