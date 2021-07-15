@@ -9,9 +9,9 @@
        newElement.classList.add(className);
         parentElement.appendChild(newElement);
     }
-    const createAndAppendImage = (content, parentElement, className = 'newElementImage') =>{
+    const createAndAppendImage = (url, parentElement, className = 'newElementImage') =>{
         let newImageElement = createNewElement('img');
-        setAttributeToNewElement(newImageElement, 'src', content);
+        setAttributeToNewElement(newImageElement, 'src', url);
         newImageElement.classList.add(className);
         parentElement.appendChild(newImageElement);
     };
@@ -90,7 +90,7 @@
             const activityResponse = await axios.get(`https://www.boredapi.com/api/activity`);
 
             const activityData = activityResponse.data;
-            createAndAppendElement('h3', `Title: ${activityData.activity}`, funContent);
+            createAndAppendElement('h3', `${activityData.activity}`, funContent);
             createAndAppendElement('h4', `Type: ${activityData.type}`, funContent);
             createAndAppendElement('h4', `Participants: ${activityData.participants}`, funContent);
             createAndAppendElement('h5', `Price: ${activityData.price}`, funContent);
@@ -178,8 +178,9 @@
                 let quotes = response.data.content;
                 let quotesAuthor = response.data.originator.name;
 
-                createAndAppendElement('h3', `${quotes}`, funContent, 'quotes');
-                createAndAppendElement('h4', `${quotesAuthor}`, funContent, 'quotesAuthor');
+                createAndAppendElement('h3', `${quotes}`, funContent, 'quote');
+
+                createAndAppendElement('span', `${quotesAuthor}`, funContent, 'quotesAuthor');
 
 
             }).catch(function (error) {
@@ -191,25 +192,32 @@
 
     document.getElementById('catFacts').addEventListener('click', () => {
         setInnerHTML('fun-content', '');
+        document.getElementById('fun-content').setAttribute('class', 'catFacts');
         getCatFact();
     });
     document.getElementById('catFactsMore').addEventListener('click', ()=>{
         setInnerHTML('fun-content', '');
+        document.getElementById('fun-content').setAttribute('class', 'catFacts');
         getCatFact();
     });
 
     document.getElementById('activity').addEventListener('click', () =>{
+        document.getElementById('fun-content').setAttribute('class', 'activity');
         setInnerHTML('fun-content', '');
         getActivityList();
+        createAndAppendImage('../img/activity.jpeg', document.getElementById('fun-content'), 'activity-img');
     });
 
     document.getElementById('activityMore').addEventListener('click', () =>{
         setInnerHTML('fun-content', '');
+        document.getElementById('fun-content').setAttribute('class', 'activity');
         getActivityList();
+        createAndAppendImage('../img/activity.jpeg', document.getElementById('fun-content'), 'activity-img');
     });
 
     document.getElementById('memes').addEventListener('click', () => {
         setInnerHTML('fun-content', '');
+        document.getElementById('fun-content').setAttribute('class', 'memes');
         getMemesList();
 
     });
@@ -217,33 +225,45 @@
 
     document.getElementById('jokes').addEventListener('click', () => {
         setInnerHTML('fun-content', '');
+
+        document.getElementById('fun-content').setAttribute('class', 'jokes');
+        createAndAppendImage('../img/smile.jpg', document.getElementById('fun-content'), 'jokes-img');
         getJokeList();
     });
 
     document.getElementById('jokesMore').addEventListener('click', () => {
         setInnerHTML('fun-content', '');
+
+        document.getElementById('fun-content').setAttribute('class', 'jokes');
+        createAndAppendImage('../img/smile.jpg', document.getElementById('fun-content'), 'jokes-img');
         getJokeList();
     });
 
     document.getElementById('dogFotos').addEventListener('click', ()=>{
         setInnerHTML('fun-content', '');
+        document.getElementById('fun-content').setAttribute('class', 'dogFotos');
         getDogsFotos();
     });
     document.getElementById('dogFotosMore').addEventListener('click', ()=>{
         setInnerHTML('fun-content', '');
+        document.getElementById('fun-content').setAttribute('class', 'dogFotos');
         getDogsFotos();
     });
 
 
     document.getElementById('quotes').addEventListener('click', ()=>{
         setInnerHTML('fun-content', '');
+        document.getElementById('fun-content').setAttribute('class', 'quotes');
+        createAndAppendImage('../img/quotes.jpg', document.getElementById('fun-content'), 'quotes-img');
         getQuotesList();
 
     });
 
     document.getElementById('quotesMore').addEventListener('click', ()=>{
         setInnerHTML('fun-content', '');
+        document.getElementById('fun-content').setAttribute('class', 'quotes');
         getQuotesList();
+        createAndAppendImage('../img/quotes.jpg', document.getElementById('fun-content'), 'quotes-img');
 
     });
 
