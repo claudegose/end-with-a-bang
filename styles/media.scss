@@ -32,6 +32,10 @@
       .catImage, .jokes-img, .activity-img{
         justify-self: center;
       }
+      .quotesAuthor{
+        font-size: 18px;
+      }
+
     }
 
 
@@ -73,7 +77,13 @@
       height: auto;
       width: 100%;
     }
-
+    .quotesAuthor{
+      font-size: 16px;
+    }
+    .quotes-img{
+      width: 100%;
+      height: auto;
+    }
   }
 
 }
@@ -93,11 +103,23 @@
       font-size: 20px;
       margin-bottom: 10px;
     }
+
+
   }
 }
 @media only screen and (max-width: 600px) {
   #museums-container .museums-content #museum-img {
     height: auto;
     width: 100%;
+  }
+
+}
+@media only screen and (max-width: 900px) {
+  #museums-container{
+    padding: 40px;
+  }
+  #museums-container #museumSelection, #museums-container .museums-content {
+    padding-right: 0px;
+    padding-left: 0;
   }
 }
