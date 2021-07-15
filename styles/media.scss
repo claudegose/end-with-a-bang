@@ -1,0 +1,125 @@
+@media only screen and (max-width: 1200px) {
+  .content-inner{
+    width: 90vw;
+    padding: 20px;
+  }
+}
+
+@media only screen and (min-width: 650px)  and (max-width: 900px) {
+
+    #fun-container {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: 60px 80%;
+      grid-auto-flow: row;
+
+
+      .left-menu{
+        grid-template-rows: 90px;
+        grid-template-columns: repeat(6, auto);
+        padding-right: 0px;
+      }
+      .fun-content-outer #fun-title{
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .fun-content-outer h3{
+        font-size: 22px;
+        text-align: center;
+      }
+
+      .catImage, .jokes-img, .activity-img{
+        justify-self: center;
+      }
+      .quotesAuthor{
+        font-size: 18px;
+      }
+
+    }
+
+
+
+}
+
+
+@media only screen and (min-width: 0px)  and (max-width: 649px) {
+
+  #fun-container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 120px 80%;
+    grid-auto-flow: row;
+    padding: 20px;
+
+    .left-menu{
+      grid-template-rows: 60px 60px;
+      grid-template-columns: repeat(3, auto);
+      padding-right: 0px;
+
+      .left-menu-button{
+        justify-self: center;
+      }
+    }
+    .fun-content-outer #fun-title{
+      font-size: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .fun-content-outer h3{
+      font-size: 20px;
+      text-align: center;
+      line-height: 2.2rem;
+    }
+
+    .catImage, .jokes-img, .activity-img, .memes img{
+      justify-self: center;
+      height: auto;
+      width: 100%;
+    }
+    .quotesAuthor{
+      font-size: 16px;
+    }
+    .quotes-img{
+      width: 100%;
+      height: auto;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 900px) {
+  #museums-container {
+    display: grid;
+    grid-template-rows: 90px auto;
+    grid-template-columns: 100%;
+    height: min-content;
+
+    #museums-container .museums-content #museum-title {
+      font-size: 26px;
+    }
+
+    .museums-content #museum-city, .museums-content #museum-country {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+
+  }
+}
+@media only screen and (max-width: 600px) {
+  #museums-container .museums-content #museum-img {
+    height: auto;
+    width: 100%;
+  }
+
+}
+@media only screen and (max-width: 900px) {
+  #museums-container{
+    padding: 40px;
+  }
+  #museums-container #museumSelection, #museums-container .museums-content {
+    padding-right: 0px;
+    padding-left: 0;
+  }
+}
