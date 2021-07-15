@@ -14,10 +14,6 @@ body {
   display: none;
 }
 
-#museum-img {
-  width: 400px;
-}
-
 .content {
   display: grid;
   justify-content: center;
@@ -227,13 +223,18 @@ h3, button {
   font-size: 30px;
   margin-bottom: 30px;
 }
+#museums-container .museums-content #museum-img {
+  height: 300px;
+}
 #museums-container .museums-content #museum-city, #museums-container .museums-content #museum-country {
   font-size: 24px;
   margin-bottom: 30px;
+  opacity: 0.7;
 }
 #museums-container .museums-content #museum-description {
   font-size: 20px;
   margin: 30px 0;
+  line-height: 1.5em;
 }
 #museums-container .museums-content a {
   padding: 0.75rem 0.95rem;
