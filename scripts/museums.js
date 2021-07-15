@@ -54,5 +54,42 @@
     });
 
 
+    const museumInput = document.getElementById('museumInput');
+    const filteredOptions = document.getElementById('filteredOptions');
+    const createFilteredMuseumList = () =>{
+        for (let museum of filteredMuseums){
+            let optionElement = document.createElement('p');
+            optionElement.setAttribute('data-value', museum.value);
+            optionElement.setAttribute('class', 'museumItem');
+            optionElement.innerHTML = `${museum.title} (${museum.city}, ${museum.country})`;
+            filteredOptions.appendChild(optionElement);
+
+        };
+    }
+
+
+    let filteredMuseums = museumList;
+
+    museumInput.addEventListener('focus', () =>{
+        setInnerHTML('filteredOptions', '');
+        filteredOptions.classList.remove('display-none');
+        createFilteredMuseumList();
+
+
+    });
+    museumInput.addEventListener('blur', () =>{
+       // filteredOptions.classList.add('display-none');
+
+    });
+
+    museumInput.addEventListener('keyup', () =>{
+        console.log(museumInput.value);
+
+    });
+
+
+
+
+
 
 })();
