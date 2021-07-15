@@ -510,3 +510,14 @@ table a, #comments a{background-color:inherit;}
 	.font-x2{font-size:1.6rem;}
 	.font-x3{font-size:1.8rem;}
 }
+
+/*custom styles start*/
+@media screen and (max-width:978px){
+	#mainav ul {
+		display: inline-block;
+	}
+}
+#logo a{
+	color: white;
+}
+/*custom styles end*/
