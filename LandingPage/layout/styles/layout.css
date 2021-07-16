@@ -530,7 +530,7 @@ table a, #comments a{background-color:inherit;}
 }
 
 .card-text{
-	height: 90px;
+	height: 90px !important;
 }
 
 /*custom styles end*/
