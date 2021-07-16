@@ -30,7 +30,6 @@
         let newCreatedElement = document.createElement(element);
         return newCreatedElement
     }
-
     const setAttributeToNewElement = (element, attribute, value) => {
         element.setAttribute(attribute, value);
     }
@@ -39,15 +38,12 @@
         const menuButtons = document.getElementsByClassName('left-menu-button');
         const showButtons = document.getElementsByClassName('show-button');
 
-
         for (let button of menuButtons){
             button.addEventListener('click', () =>{
                 for (let button of menuButtons){
                     button.classList.remove('button-active');
-
                 };
                 let buttonId = button.getAttribute('id');
-
 
                 for (let showButton of showButtons){
                     if (showButton.getAttribute('id').includes(buttonId)){
@@ -55,15 +51,11 @@
                     } else {
                         showButton.classList.add('display-none');
                     };
-                }
-
-
+                };
                 button.classList.add('button-active');
             })
-
         }
     }
-
 
     async function getCatFact() {
         try {
@@ -77,10 +69,8 @@
             createAndAppendElement('h3', catFact, funContent);
             createAndAppendImage(catImage, funContent, 'catImage');
 
-
         } catch (error) {
             setInnerHTML('fun-content', 'Sorry, something went wrong.... Try again later');
-
         };
     };
 
@@ -114,11 +104,7 @@
                 setInnerHTML('fun-content', '');
                 let memesIndex = counter%memesData.length;
                 createAndAppendImage(memesData[memesIndex].url, funContent, 'memesImage');
-
                 counter ++;
-
-
-
             })
         } catch {
             setInnerHTML('fun-content', 'Sorry, something went wrong.... Try again later');
@@ -141,8 +127,6 @@
             createAndAppendElement('h3', ` ${jokePart1}`, funContent);
             createAndAppendElement('h3', `... ${jokePart2}`, funContent);
 
-
-
         } catch {
             setInnerHTML('fun-content', 'Sorry, something went wrong.... Try again later');
         }
@@ -161,33 +145,29 @@
     }
 
     function getQuotesList(){
+        setInnerHTML('fun-title', `Get random quotes from the famous people in the world`);
 
-            setInnerHTML('fun-title', `Get random quotes from the famous people in the world`);
+        let options = {
+            method: 'GET',
+            url: 'https://quotes15.p.rapidapi.com/quotes/random/',
+            headers: {
+                'x-rapidapi-key': 'b352bd4981msh95d1005e0402b75p1789b5jsn117e5b1e6edd',
+                'x-rapidapi-host': 'quotes15.p.rapidapi.com'
+            }
+        };
 
-            let options = {
-                method: 'GET',
-                url: 'https://quotes15.p.rapidapi.com/quotes/random/',
-                headers: {
-                    'x-rapidapi-key': 'b352bd4981msh95d1005e0402b75p1789b5jsn117e5b1e6edd',
-                    'x-rapidapi-host': 'quotes15.p.rapidapi.com'
-                }
-            };
+        axios.request(options).then(function (response) {
 
-            axios.request(options).then(function (response) {
+            let quotes = response.data.content;
+            let quotesAuthor = response.data.originator.name;
 
-                let quotes = response.data.content;
-                let quotesAuthor = response.data.originator.name;
-
-                createAndAppendElement('h3', `${quotes}`, funContent, 'quote');
-
-                createAndAppendElement('span', `${quotesAuthor}`, funContent, 'quotesAuthor');
+            createAndAppendElement('h3', `${quotes}`, funContent, 'quote');
+            createAndAppendElement('span', `${quotesAuthor}`, funContent, 'quotesAuthor');
 
 
-            }).catch(function (error) {
-                setInnerHTML('fun-content', 'Sorry, something went wrong.... Try again later');
-            });
-
-
+        }).catch(function (error) {
+            setInnerHTML('fun-content', 'Sorry, something went wrong.... Try again later');
+        });
     }
 
     document.getElementById('catFacts').addEventListener('click', () => {
@@ -225,7 +205,6 @@
 
     document.getElementById('jokes').addEventListener('click', () => {
         setInnerHTML('fun-content', '');
-
         document.getElementById('fun-content').setAttribute('class', 'jokes');
         createAndAppendImage('../img/smile.jpg', document.getElementById('fun-content'), 'jokes-img');
         getJokeList();
@@ -233,7 +212,6 @@
 
     document.getElementById('jokesMore').addEventListener('click', () => {
         setInnerHTML('fun-content', '');
-
         document.getElementById('fun-content').setAttribute('class', 'jokes');
         createAndAppendImage('../img/smile.jpg', document.getElementById('fun-content'), 'jokes-img');
         getJokeList();
@@ -256,7 +234,6 @@
         document.getElementById('fun-content').setAttribute('class', 'quotes');
         createAndAppendImage('../img/quotes.jpg', document.getElementById('fun-content'), 'quotes-img');
         getQuotesList();
-
     });
 
     document.getElementById('quotesMore').addEventListener('click', ()=>{
@@ -264,17 +241,8 @@
         document.getElementById('fun-content').setAttribute('class', 'quotes');
         getQuotesList();
         createAndAppendImage('../img/quotes.jpg', document.getElementById('fun-content'), 'quotes-img');
-
     });
-
-
-
-
-
-
 
     toggleActiveSideMenuButton();
     getCatFact();
-
-
 })()

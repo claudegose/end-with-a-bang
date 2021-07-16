@@ -1,5 +1,4 @@
 (()=>{
-
     const museumList = [
         {title: 'Louvre', value: 'louvre', city: 'Paris', country: 'France', url: 'https://www.louvre.fr/en/online-tours', img: '../img/louvre.jpg', description: 'France’s most famous museum is currently offering seven virtual tours: The Advent of the Artist, Founding Myths: From Hercules to Darth Vader, Power Plays, The Body in Movement, Egyptian Antiquities, Remains of the Louvre’s Moat and Galerie d’Apollon.'},
         {title: 'British Museum', value: 'britishmuseum', city: 'London', country: 'Great Britain', url: 'https://britishmuseum.withgoogle.com/', img: '../img/british.jpg', description: 'Explore ancient historical artifacts from Africa, Asia, the Americas, Europe and Oceania in this totally interactive virtual tour. This museum also features the Rosetta Stone!'},
@@ -22,6 +21,10 @@
                 'In particular, the d\'Orsay is a Van Gogh treasure trove. You can inspect his Self Portrait,  Starry Night, Dr. Gachet, The Church at Auvers, and The Siesta. Other masterpieces at the d\'Orsay include Manet\'s Luncheon on the Grass and Olympia, Paul Cezanne\'s Card Players, Claude Monet\'s Houses of Parliament, and Auguste Renoir\'s Moulin de la Galette.'},
     ];
 
+    let filteredMuseums = museumList;
+    let chosenMuseum;
+    const museumInput = document.getElementById('museumInput');
+    const filteredOptions = document.getElementById('filteredOptions');
 
     const setInnerHTML = (id, text) =>{
         document.getElementById(id).innerHTML = text;
@@ -30,10 +33,6 @@
     const setAttribute = (id, attribute, value) =>{
         document.getElementById(id).setAttribute(attribute, value);
     }
-
-    const museumInput = document.getElementById('museumInput');
-    const filteredOptions = document.getElementById('filteredOptions');
-    let chosenMuseum;
 
     const displayChosenMuseum = (museum) =>{
         setInnerHTML('museum-title', museum.title);
@@ -52,7 +51,6 @@
             optionElement.setAttribute('class', 'museumItem');
             optionElement.innerHTML = `${museum.title} (${museum.city}, ${museum.country})`;
             filteredOptions.appendChild(optionElement);
-
         };
     }
 
@@ -63,7 +61,6 @@
             museum.addEventListener('click', () =>{
                 let chosenMuseumValue = museum.getAttribute('data-value');
 
-
                 for (let item of filteredMuseums){
                     if (item.value === chosenMuseumValue){
                         chosenMuseum = item;
@@ -73,14 +70,12 @@
                 displayChosenMuseum(chosenMuseum);
                 museumInput.value = '';
                 setInnerHTML('museums-description', '');
-                document.getElementById('museum-url').classList.remove('display-none')
-
-            })
-
+                document.getElementById('museum-url').classList.remove('display-none');
+            });
         }
     };
+
     museumInput.value = '';
-    let filteredMuseums = museumList;
 
     museumInput.addEventListener('focus', () =>{
         filteredMuseums = museumList;
@@ -88,17 +83,12 @@
         filteredOptions.classList.remove('display-none');
         createFilteredMuseumList();
         choseAndDisplayMuseum();
-
     });
 
-
     museumInput.addEventListener('keyup', () =>{
-
         filteredMuseums = museumList.filter((museum) => {
             return ((museum.title.toLowerCase()).includes(museumInput.value.toLowerCase()) || (museum.country.toLowerCase()).includes(museumInput.value.toLowerCase()));
         });
-
-
         setInnerHTML('filteredOptions', '');
         createFilteredMuseumList();
         choseAndDisplayMuseum();
@@ -107,6 +97,4 @@
             setInnerHTML('filteredOptions', 'No results found');
         }
     });
-
-
 })();
