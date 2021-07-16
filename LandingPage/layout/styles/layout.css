@@ -419,7 +419,7 @@ table a, #comments a{background-color:inherit;}
 
 /* Media Queries
 --------------------------------------------------------------------------------------------------------------- */
-@-ms-viewport{width:device-width;}
+/*@-ms-viewport{width:device-width;}
 
 
 /* Max Wrapper Width - Laptop, Desktop etc.
@@ -520,4 +520,13 @@ table a, #comments a{background-color:inherit;}
 #logo a{
 	color: white;
 }
+
+#mainav li a:hover{
+	text-decoration: underline;
+}
+
+.active-menu-item{
+	text-decoration: underline;
+}
+
 /*custom styles end*/

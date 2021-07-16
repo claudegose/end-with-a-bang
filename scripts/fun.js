@@ -150,7 +150,7 @@
     async function getDogsFotos(){
         try{
             setInnerHTML('fun-content', '');
-            setInnerHTML('fun-title', `Can't live without dogs? Here you can find the cutest dogs photos`);
+            setInnerHTML('fun-title', `Can't live without dogs? Here you can find the cutest dog photos`);
             const dogFotosResponse = await axios.get(`https://random.dog/woof.json`);
             const dogFotoUrl = dogFotosResponse.data.url;
             createAndAppendImage(dogFotoUrl, funContent, 'dogImage');
