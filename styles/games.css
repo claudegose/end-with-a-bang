@@ -1,12 +1,13 @@
 .body {
     text-align: center;
     background-color: white;
+    overflow: hidden;
 }
 
 .header {
     text-align: center;
     color: black;
-    font-size: xxx-large;
+    font-size: 35px;
     padding: 10px;
 }
 
@@ -47,8 +48,16 @@
     background-size: contain;
 }
 
+.btn-game {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .footer {
-    position: fixed;
     bottom: 0;
     width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    word-wrap: break-word;
 }
