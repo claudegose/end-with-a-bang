@@ -1,15 +1,13 @@
 .body {
-    background-image: url(../images/nasa-Q1p7bh3SHj8-unsplash.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     text-align: center;
+    background-color: white;
+    overflow: hidden;
 }
 
 .header {
     text-align: center;
-    color: white;
-    font-size: xxx-large;
+    color: black;
+    font-size: 35px;
     padding: 10px;
 }
 
@@ -48,4 +46,18 @@
 .laser {
     background-image: url(../images/banana.png);
     background-size: contain;
+}
+
+.btn-game {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer {
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    word-wrap: break-word;
 }
