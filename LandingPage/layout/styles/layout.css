@@ -529,4 +529,8 @@ table a, #comments a{background-color:inherit;}
 	text-decoration: underline;
 }
 
+.card-text{
+	height: 90px;
+}
+
 /*custom styles end*/
