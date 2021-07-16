@@ -37,20 +37,17 @@ const spaceInvaders = () => {
         squares[currentShooterIndex].classList.remove('shooter')
 
         switch (e.keyCode) {
+
             case 37:
                 if (currentShooterIndex % width !== 0) currentShooterIndex -=1
                 break
             case 39:
                 if (currentShooterIndex % width < width -1) currentShooterIndex +=1
                 break
-            case 81:
-                if (currentShooterIndex % width !== 0) currentShooterIndex -=1
-                break
-            case 68:
-                if (currentShooterIndex % width < width -1) currentShooterIndex +=1
-                break
         }
+
         squares[currentShooterIndex].classList.add('shooter')
+
     }
     document.addEventListener('keydown', moveShooter)
 
@@ -87,13 +84,15 @@ const spaceInvaders = () => {
             squares[currentShooterIndex].classList.remove('invader')
             squares[currentShooterIndex].classList.remove('shooter')
             squares[currentShooterIndex].classList.add('kill')
-            clearInterval(invaderID)
+            direction = 0
+
         }
 
         for (let i = 0; i <= invaders.length -1; i++) {
             if (invaders[i] > (squares.length - (width-1))) {
                 resultDisplay.textContent = 'Game Over'
                 clearInterval(invaderID)
+                direction = 0
             }
         }
 
@@ -139,6 +138,11 @@ const spaceInvaders = () => {
         switch (e.key) {
             case 'ArrowUp':
                 laserId = setInterval(moveLaser, 100)
+                e.preventDefault()
+                break
+            case 'ArrowDown':
+                e.preventDefault()
+                break
         }
     }
 
